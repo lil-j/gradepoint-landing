@@ -16,7 +16,7 @@ export default function Home({gpas}) {
 
     return (
         <main
-            className={`${inter.className}`}
+            className={`${inter.className} min-h-screen`}
         >
             <Head>
                 <title>GradePoint</title>
@@ -31,7 +31,7 @@ export default function Home({gpas}) {
             <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="R6dTdCZ50Ew" onClose={() => setOpen(false)} />
             <div className="noise">
                 <div className="flex justify-between px-5 mt-6 md:px-0 mx-auto max-w-3xl ">
-                    <h1 className="text-xl font-medium items-center cursor-pointer">GradePoint</h1>
+                    <h1 className="text-xl font-medium items-center cursor-pointer tracking-tight">GradePoint</h1>
                     <div className="flex gap-5 text-lg">
                         <a
                             href="https://github.com/lil-j/gradepoint/tree/master"
@@ -98,7 +98,7 @@ export default function Home({gpas}) {
 
             </div>
             </div>
-            <div className="absolute bottom-0 w-screen bg-gray-900">
+            <div className="fixed bottom-0 w-screen bg-gray-900">
                 <HorizontalTicker duration={25000}>
                     {
                         Object.keys(gpas).map((courseNumber, index) => {

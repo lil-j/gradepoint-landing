@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html {
-    @apply bg-purple-400 text-white
+    @apply text-white bg-gradient-to-br from-purple-400 to-purple-700
 }
 
 .noise::before{
