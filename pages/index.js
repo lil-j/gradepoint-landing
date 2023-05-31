@@ -67,16 +67,16 @@ export default function Home({gpas}) {
                     </a>
                     <button
                         onClick={() => setOpen(true)}
-                        className="hover:opacity-90 active:scale-95 transition-all flex gap-3 w-fit font-medium bg-white px-4 py-3 bg-purple-600 rounded-full text-lg">
+                        className="hover:opacity-90 active:scale-95 transition-all flex gap-3 w-fit font-medium px-4 py-3 bg-purple-600 rounded-full text-lg">
                         {/*<img*/}
                         {/*    className="h-6"*/}
                         {/*    src="chrome_store.png"/>*/}
                         {/*Play button svg*/}
-                        {/*<svg className="h-6 w-6" fill="none" stroke="white" viewBox="0 0 24 24"*/}
-                        {/*        xmlns="http://www.w3.org/2000/svg">*/}
-                        {/*    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"*/}
-                        {/*            d="M5 15l7-7 7 7"/>*/}
-                        {/*</svg>*/}
+                        <svg className="h-6 w-6" fill="none" stroke="white" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                                    d="M5 15l7-7 7 7"/>
+                        </svg>
                         <p>See a demo</p>
                     </button>
                 </div>
