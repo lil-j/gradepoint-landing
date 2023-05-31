@@ -6,6 +6,7 @@ import ModalVideo from 'react-modal-video'
 import {useState} from "react";
 
 import Logo from "../public/ye-removebg-preview.png"
+import {Head} from "next/head";
 
 const inter = Inter({subsets: ['latin']})
 const instrumentSerif = Instrument_Serif({weight: '400', subsets: ["latin"]})
@@ -17,6 +18,9 @@ export default function Home({gpas}) {
         <main
             className={`${inter.className}`}
         >
+            <Head>
+                <title>GradePoint</title>
+            </Head>
             <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="R6dTdCZ50Ew" onClose={() => setOpen(false)} />
             <div className="noise">
                 <div className="flex justify-between px-5 mt-6 md:px-0 mx-auto max-w-3xl ">
