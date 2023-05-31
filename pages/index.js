@@ -45,7 +45,7 @@ export default function Home({gpas}) {
                     </div>
                 </div>
             <div
-                className="px-5 md:px-0 mt-20 mx-auto max-w-3xl"
+                className="px-5 md:px-0 mt-5 md:mt-20 mx-auto max-w-3xl"
             >
                 <div className="flex gap-3 items-center w-fit mb-3 py-2 rounded-full">
                     {/*<Image*/}
