@@ -6,7 +6,7 @@ import ModalVideo from 'react-modal-video'
 import {useState} from "react";
 
 import Logo from "../public/ye-removebg-preview.png"
-import {Head} from "next/head";
+import Head from "next/head";
 
 const inter = Inter({subsets: ['latin']})
 const instrumentSerif = Instrument_Serif({weight: '400', subsets: ["latin"]})
