@@ -20,6 +20,13 @@ export default function Home({gpas}) {
         >
             <Head>
                 <title>GradePoint</title>
+                <meta name="description" content="GradePoint is a free Chrome extension that shows real course data on MyPlan." />
+                <meta name="keywords" content="gradepoint, grade point, grade, point, myplan, uw, university of washington, chrome, extension, chrome extension, chrome extension"/>
+                <meta name="author" content="GradePoint" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <meta property="og:title" content="GradePoint" />
+                <meta property="og:description" content="GradePoint is a free Chrome extension that shows real course data on MyPlan." />
+
             </Head>
             <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="R6dTdCZ50Ew" onClose={() => setOpen(false)} />
             <div className="noise">
