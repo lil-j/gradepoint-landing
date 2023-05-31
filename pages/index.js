@@ -64,12 +64,12 @@ export default function Home({gpas}) {
                     className={`mt-3 text-xl mb-10`}
                 >Average GPAs by teacher and course, with RateMyProfessor ratings and reviews.
                 </h1>
-                <div className="flex gap-4">
+                <div className="flex flex-wrap">
                     <a
                         href="https://chrome.google.com/webstore/detail/gradepoint-myplan/ljcpnekamefmpkpmbcjbeiibdamgekab"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:opacity-90 active:scale-95 transition-all flex gap-3 w-fit font-medium bg-white px-4 py-3 text-purple-600 rounded-full text-lg">
+                        className="hover:opacity-90 active:scale-95 transition-all flex gap-3 w-full lg:w-fit lg:mr-3 mb-2 lg:mb-0 font-medium bg-white px-4 py-3 text-purple-600 rounded-full text-lg">
                         <img
                             className="h-6"
                             src="chrome_store.png"/>
@@ -78,7 +78,7 @@ export default function Home({gpas}) {
                     </a>
                     <button
                         onClick={() => setOpen(true)}
-                        className="hover:opacity-90 active:scale-95 transition-all flex gap-3 w-fit font-medium px-4 py-3 bg-purple-600 rounded-full text-lg">
+                        className="hover:opacity-90 active:scale-95 transition-all flex gap-3 w-full lg:w-fit font-medium px-4 py-3 bg-purple-600 rounded-full text-lg">
                         {/*<img*/}
                         {/*    className="h-6"*/}
                         {/*    src="chrome_store.png"/>*/}
