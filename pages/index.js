@@ -1,118 +1,261 @@
 import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import {Inter, Instrument_Serif} from 'next/font/google'
+import {RoughNotation, RoughNotationGroup} from "react-rough-notation";
+import {HorizontalTicker} from "react-infinite-ticker";
+import ModalVideo from 'react-modal-video'
+import {useState} from "react";
 
-const inter = Inter({ subsets: ['latin'] })
+import Logo from "../public/ye-removebg-preview.png"
 
-export default function Home() {
-  return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">pages/index.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+const inter = Inter({subsets: ['latin']})
+const instrumentSerif = Instrument_Serif({weight: '400', subsets: ["latin"]})
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+export default function Home({gpas}) {
+    const [isOpen, setOpen] = useState(false)
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+    return (
+        <main
+            className={`${inter.className}`}
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+            <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="R6dTdCZ50Ew" onClose={() => setOpen(false)} />
+            <div className="noise">
+                <div className="flex justify-between px-5 mt-6 md:px-0 mx-auto max-w-3xl ">
+                    <h1 className="text-xl font-medium items-center cursor-pointer">GradePoint</h1>
+                    <div className="flex gap-5 text-lg">
+                        <a
+                            href="https://github.com/lil-j/gradepoint/tree/master"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:opacity-50 transition-all">GitHub</a>
+                        <a href="https://twitter.com/messages/compose?recipient_id=813212513345015808&text=Hey%20Jake"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           className="hover:opacity-50 transition-all">Contact</a>
+                    </div>
+                </div>
+            <div
+                className="px-5 md:px-0 mt-20 mx-auto max-w-3xl"
+            >
+                <div className="flex gap-3 items-center w-fit mb-3 py-2 rounded-full">
+                    {/*<Image*/}
+                    {/*  src={Logo}*/}
+                    {/*  alt="GradePoint Logo"*/}
+                    {/*  width={75}*/}
+                    {/*  />*/}
+                </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+                <h1
+                    className={`text-6xl lg:text-8xl ${instrumentSerif.className}`}
+                ><RoughNotation show type="circle" strokeWidth={3} animationDelay={800}>Real</RoughNotation> Course
+                    Data, embedded on
+                    <span className="italic">MyPlan</span></h1>
+                <h1
+                    className={`mt-3 text-xl mb-10`}
+                >Average GPAs by teacher and course, with RateMyProfessor ratings and reviews.
+                </h1>
+                <div className="flex gap-4">
+                    <a
+                        href="https://chrome.google.com/webstore/detail/gradepoint-myplan/ljcpnekamefmpkpmbcjbeiibdamgekab"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:opacity-90 active:scale-95 transition-all flex gap-3 w-fit font-medium bg-white px-4 py-3 text-purple-600 rounded-full text-lg">
+                        <img
+                            className="h-6"
+                            src="chrome_store.png"/>
+                        <p>Get it for <RoughNotation show={false} color="purple" type="underline" strokeWidth={2}
+                                                     animationDelay={2300}>free</RoughNotation></p>
+                    </a>
+                    <button
+                        onClick={() => setOpen(true)}
+                        className="hover:opacity-90 active:scale-95 transition-all flex gap-3 w-fit font-medium bg-white px-4 py-3 bg-purple-600 rounded-full text-lg">
+                        {/*<img*/}
+                        {/*    className="h-6"*/}
+                        {/*    src="chrome_store.png"/>*/}
+                        {/*Play button svg*/}
+                        <svg className="h-6 w-6" fill="none" stroke="white" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                                    d="M5 15l7-7 7 7"/>
+                        </svg>
+                        <p>See a demo</p>
+                    </button>
+                </div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
+                <div className="flex">
+                    <small className="mt-1">Join 500+ boundless students</small>
+                </div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+            </div>
+            </div>
+            <div className="absolute bottom-0 w-screen bg-gray-900">
+                <HorizontalTicker duration={25000}>
+                    {
+                        Object.keys(gpas).map((courseNumber, index) => {
+                            return (
+                                <div
+                                    key={index}
+                                    className="mx-4 my-3 flex items-center gap-2 text-white text-xl font-medium"
+                                >
+                                    <p className="whitespace-nowrap">{courseNumber}</p>
+                                    <p
+                                        style={{
+                                            color: getGradientColor(gpas[courseNumber])
+                                        }}
+                                    >{gpas[courseNumber]}</p>
+                                </div>
+                            )
+                        })
+                    }
+
+                </HorizontalTicker>
+            </div>
+
+        </main>
+    )
+}
+
+export async function getStaticProps() {
+    const r = await fetch("https://bhpscfcsjsqqqtovmwfk.functions.supabase.co/get-gpas-for-courses", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            courseNumbers: [
+                "CSE 142 A",
+                "CSE 142 B",
+                "CSE 142 C",
+                "CSE 142 D",
+                "CSE 143 A",
+                "CSE 143 B",
+                "CSE 143 C",
+                "CSE 143 D",
+                "CSE 154 A",
+                "CSE 154 B",
+                "CSE 154 C",
+                "CSE 154 D",
+                "CSE 154 E",
+                "INFO 201 A",
+                "INFO 201 B",
+                "INFO 201 C",
+                "INFO 201 D",
+                "INFO 200 A",
+                "INFO 200 B",
+                "INFO 200 C",
+                "INFO 200 D",
+                "INFO 200 E",
+                "INFO 330 A",
+                "INFO 330 B",
+                "INFO 330 C",
+                "INFO 330 D",
+                "INFO 340 A",
+                "INFO 340 B",
+                "INFO 340 C",
+                "INFO 340 D",
+                "INFO 360 A",
+                "INFO 360 B",
+                "INFO 360 C",
+                "INFO 360 D",
+                "MATH 124 A",
+                "MATH 124 B",
+                "MATH 124 C",
+                "MATH 124 D",
+                "MATH 124 E",
+                "MATH 125 A",
+                "MATH 125 B",
+                "MATH 125 C",
+                "MATH 125 D",
+                "MATH 125 E",
+                "MATH 126 A",
+                "MATH 126 B",
+                "MATH 126 C",
+                "MATH 126 D",
+                "CHEM 142 A",
+                "CHEM 142 B",
+                "CHEM 142 C",
+                "CHEM 142 D",
+                "CHEM 143 A",
+                "CHEM 143 B",
+                "CHEM 143 C",
+                "CHEM 143 D",
+                "PHYS 121 A",
+                "PHYS 121 B",
+                "PHYS 121 C",
+                "PHYS 121 D",
+                "PHYS 121 A",
+            ]
+        })
+    })
+    const {data} = await r.json()
+    // console.log(data)
+    let averageGPAs = calculateAverageGPA(data);
+    // randomize order
+    averageGPAs = Object.keys(averageGPAs).sort(() => Math.random() - 0.5).reduce((obj, key) => {
+        obj[key] = averageGPAs[key];
+        return obj;
+    }   , {});
+
+    console.log(averageGPAs)
+    return {
+        props: {
+            gpas: averageGPAs,
+        },
+        revalidate: 60 * 60 * 24 // 1 day
+    }
+}
+
+function calculateAverageGPA(data) {
+    // Create an object to store the sum of GPAs and count for each course
+    const courseGPAData = {};
+
+    // Iterate through each data item in the input data
+    data.forEach(item => {
+        // Extract the course number without the letter at the end
+        const courseNumber = item.Course_Number.replace(/\s+[A-Za-z]$/, '');
+
+        // If the course number is not already in courseGPAData, add it with the initial values
+        if (!courseGPAData[courseNumber]) {
+            courseGPAData[courseNumber] = {
+                gpaSum: 0,
+                count: 0,
+            };
+        }
+
+        // Add the current item's GPA to the course's cumulative GPA sum and increment the count
+        courseGPAData[courseNumber].gpaSum += item.Average_GPA;
+        courseGPAData[courseNumber].count += 1;
+    });
+
+    // Calculate the average GPA for each course and store it in a new object
+    const averageGPAs = {};
+    for (const courseNumber in courseGPAData) {
+        averageGPAs[courseNumber] = Math.round((courseGPAData[courseNumber].gpaSum / courseGPAData[courseNumber].count) * 100) / 100;
+    }
+
+    // Return the object containing the average GPAs for each course
+    return averageGPAs;
+}
+
+/**
+ * Get the color corresponding to the input number on a dynamic gradient scale.
+ *
+ * @param {number} num - The input number (between 1 and 4).
+ * @return {string} The corresponding gradient color.
+ */
+function getGradientColor(num) {
+    // Check if the input is within the valid range
+    if (num < 1 || num > 4) {
+        throw new Error('Invalid input: number should be between 1 and 4.');
+    }
+
+    // Calculate the color components based on the input number
+    const red = Math.round(255 * (4 - num) / 3);
+    const green = Math.round(255 * (num - 1.5) / 3);
+    const blue = 0;
+
+    // Convert the color components to a hex string
+    const rgbToHex = (r, g, b) => '#' + [r, g, b].map(x => x.toString(16).padStart(2, '0')).join('');
+
+    // Return the gradient color
+    return rgbToHex(red, green, blue);
 }
